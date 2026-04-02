@@ -1,12 +1,22 @@
 :root {
-  /* Guide palette + UI */
-  --color-navy: #1b2a4a;
-  --color-warm-white: #f5f2ee;
-  --color-gold: #c9a96e;
-  --color-text: #2d2d2d;
-  --color-text-muted: #5c5c5c;
-  --color-border-muted: #8a8a8a;
-  --color-divider: #e8e8e8;
+  /*
+   * Reading-first theme: high contrast body/heading text on warm paper,
+   * clear dividers, link colors that meet AA on the page background.
+   */
+  --color-bg: #faf9f5;
+  --color-bg-sidebar: #f2f0ea;
+  --color-bg-panel: #ffffff;
+  --color-heading: #0f172a;
+  --color-navy: #0f172a;
+  --color-text: #161616;
+  --color-text-muted: #3a3a3a;
+  --color-link: #0c2d5c;
+  --color-link-hover: #081a36;
+  --color-gold: #8b6914;
+  --color-divider: #c9c4ba;
+  --color-divider-strong: #a8a199;
+  --color-border-muted: #6b6560;
+  --color-warm-white: var(--color-bg);
 
   --radius-sm: 16px;
   --radius-md: 20px;
@@ -30,7 +40,12 @@
   --max-content: none;
   --content-pad-x: clamp(1.25rem, 4vw, 3rem);
   --part-gap: clamp(2.5rem, 5vw, 4rem);
-  --bento-gap: clamp(1rem, 2vw, 1.5rem);
+  --section-gap: clamp(1.75rem, 3vw, 2.5rem);
+  --read-width: min(46rem, 100%);
+
+  /* Slightly larger body type for sustained reading */
+  --font-body-size: 1.0625rem;
+  --font-body-leading: 1.65;
 }
 
 @media (prefers-reduced-transparency: reduce) {

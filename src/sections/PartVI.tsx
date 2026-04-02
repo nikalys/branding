@@ -3,7 +3,7 @@ import { RoadmapPhases } from "../illustrations/RoadmapPhases";
 
 export function PartVI() {
   return (
-    <div className="bento-grid">
+    <div className="guide-flow">
       <BentoCard
         id="part-vi-brand-evolution-roadmap"
         title="Part VI: Brand Evolution Roadmap"
@@ -69,7 +69,6 @@ export function PartVI() {
         id="phase-3-elevation"
         title="Phase 3: Elevation (Months 18–36, $3,000–$8,000+/project)"
         titleLevel="h3"
-        layout="full"
       >
         <p>
           <strong>Focus:</strong> Move upmarket. Brand signals premium without losing approachability.
@@ -100,7 +99,6 @@ export function PartVI() {
         id="summary-positioning-in-one-sentence"
         title="Summary: Positioning in One Sentence"
         titleLevel="h3"
-        layout="full"
       >
         <blockquote className="blockquote-card" style={{ maxWidth: "min(52ch, 100%)" }}>
           <p style={{ marginBottom: 0 }}>

@@ -3,7 +3,7 @@ import { SixThemesIllustration } from "../illustrations/SixThemesIllustration";
 
 export function PartII() {
   return (
-    <div className="bento-grid">
+    <div className="guide-flow">
       <BentoCard
         id="part-ii-choosing-a-brand-theme"
         title="Part II: Choosing a Brand Theme"
@@ -42,7 +42,6 @@ export function PartII() {
         id="the-six-primary-agency-themes"
         title="The Six Primary Agency Themes"
         titleLevel="h3"
-        layout="full"
       >
         <div className="illustration-wrap">
           <SixThemesIllustration style={{ width: "100%", maxWidth: "min(420px, 100%)" }} />

@@ -22,7 +22,7 @@ const archetypeTitles: Record<(typeof archetypeKeys)[number], string> = {
 
 export function PartI() {
   return (
-    <div className="bento-grid">
+    <div className="guide-flow">
       <BentoCard
         id="part-i-core-brand-principles"
         title="Part I: Core Brand Principles"
@@ -112,7 +112,7 @@ export function PartI() {
         </p>
       </BentoCard>
 
-      <BentoCard id="brand-archetypes" title="4. Brand Archetypes" titleLevel="h3" layout="full">
+      <BentoCard id="brand-archetypes" title="4. Brand Archetypes" titleLevel="h3">
         <p>
           Archetypes are psychological patterns that give a brand an instantly recognizable personality.
           They originate from Jungian psychology and are one of the most powerful frameworks in brand
@@ -258,7 +258,6 @@ export function PartI() {
         id="the-brand-is-the-client-experience"
         title="5. The Brand is the Client Experience"
         titleLevel="h3"
-        layout="full"
       >
         <p>
           For a services business, the brand is not just what the client sees — it is what the client{" "}

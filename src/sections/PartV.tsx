@@ -7,7 +7,7 @@ import { DosDontsIcons } from "../illustrations/DosDontsIcons";
 
 export function PartV() {
   return (
-    <div className="bento-grid">
+    <div className="guide-flow">
       <BentoCard
         id="part-v-recommendations-small-scale-beginner-agency"
         title="Part V: Recommendations for a Small-Scale Beginner Agency ($500–$3,000/project, 1–5 projects/week)"
@@ -20,7 +20,7 @@ export function PartV() {
         </p>
       </BentoCard>
 
-      <BentoCard id="strategic-positioning" title="Strategic Positioning" titleLevel="h3" layout="full">
+      <BentoCard id="strategic-positioning" title="Strategic Positioning" titleLevel="h3">
         <p>
           You are an <strong>accessible, professional generalist</strong> with a bias toward small
           businesses that need a real online presence without enterprise budgets. Your clients are
@@ -115,7 +115,7 @@ export function PartV() {
         </p>
       </BentoCard>
 
-      <BentoCard id="logo-recommendation" title="Logo Recommendation" titleLevel="h3" layout="full">
+      <BentoCard id="logo-recommendation" title="Logo Recommendation" titleLevel="h3">
         <div className="illustration-wrap">
           <LogoLockupHint style={{ width: "100%", maxWidth: "200px" }} />
           <p className="figure-caption">
@@ -161,7 +161,6 @@ export function PartV() {
         id="brand-personality-model-emotional-territory"
         title="Brand Personality Model & Emotional Territory"
         titleLevel="h3"
-        layout="full"
       >
         <p>
           Brand voice comes from brand personality. Before writing a single word of copy, define where
@@ -246,7 +245,7 @@ export function PartV() {
         </p>
       </BentoCard>
 
-      <BentoCard id="brand-voice" title="Brand Voice" titleLevel="h3" layout="full">
+      <BentoCard id="brand-voice" title="Brand Voice" titleLevel="h3">
         <p>Your copy should be:</p>
         <ul>
           <li>
@@ -305,7 +304,6 @@ export function PartV() {
         id="social-media-brand-application"
         title="Social Media Brand Application"
         titleLevel="h3"
-        layout="full"
       >
         <p>
           Social media is where most first impressions happen now — often before a prospect visits your

@@ -19,24 +19,19 @@ html {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-leading);
   color: var(--color-text);
-  background: var(--color-warm-white);
+  background: var(--color-bg);
   min-height: 100vh;
 }
 
-/* Layered mesh behind glass cards */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
-  background:
-    radial-gradient(ellipse 120% 80% at 10% 0%, rgba(201, 169, 110, 0.12), transparent 50%),
-    radial-gradient(ellipse 100% 60% at 90% 20%, rgba(27, 42, 74, 0.08), transparent 45%),
-    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(27, 42, 74, 0.06), transparent 50%),
-    var(--color-warm-white);
+  background: var(--color-bg);
   pointer-events: none;
 }
 
@@ -50,8 +45,8 @@ h3,
 h4 {
   font-family: var(--font-display);
   font-weight: 400;
-  line-height: 1.25;
-  color: var(--color-navy);
+  line-height: 1.28;
+  color: var(--color-heading);
   margin: 0 0 0.5em;
 }
 
@@ -88,13 +83,13 @@ li {
 }
 
 a {
-  color: var(--color-navy);
-  text-decoration-thickness: 1px;
+  color: var(--color-link);
+  text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
 
 a:hover {
-  color: var(--color-gold);
+  color: var(--color-link-hover);
 }
 
 .skip-link {
@@ -103,8 +98,8 @@ a:hover {
   left: 1rem;
   z-index: 1000;
   padding: 0.75rem 1rem;
-  background: var(--color-navy);
-  color: var(--color-warm-white);
+  background: var(--color-heading);
+  color: var(--color-bg-panel);
   border-radius: var(--radius-sm);
   font-weight: 600;
   text-decoration: none;
@@ -112,7 +107,7 @@ a:hover {
 
 .skip-link:focus {
   top: 1rem;
-  outline: 2px solid var(--color-gold);
+  outline: 3px solid var(--color-link);
   outline-offset: 2px;
 }
 
@@ -157,13 +152,14 @@ a:hover {
   max-height: 100vh;
   overflow-y: auto;
   padding: 1rem 1rem 2rem;
-  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+  background: var(--color-bg-sidebar);
+  border-bottom: 1px solid var(--color-divider);
 }
 
 @media (min-width: 960px) {
   .toc-rail {
     border-bottom: none;
-    border-right: 1px solid rgba(27, 42, 74, 0.08);
+    border-right: 1px solid var(--color-divider);
   }
 }
 
@@ -175,10 +171,10 @@ a:hover {
   padding-bottom: clamp(3rem, 8vw, 5rem);
 }
 
-/* Guide stack: intro + parts with clear separation */
+/* Single readable column for the guide body */
 .guide-stack {
   width: 100%;
-  max-width: 100%;
+  max-width: var(--read-width);
 }
 
 .guide-intro-wrap {
@@ -186,18 +182,22 @@ a:hover {
   padding-bottom: clamp(1.25rem, 2.5vw, 2rem);
 }
 
-/* Intro: single full-width module */
-.bento-grid--intro {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--bento-gap);
+/* Linear stack: top-to-bottom reading order only */
+.guide-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-/* Each major part: separator line + breathing room before chapter */
+.guide-flow--intro {
+  gap: 0;
+}
+
+/* Each major part: separator before chapter */
 .guide-part {
   margin-top: 0;
   padding-top: var(--part-gap);
-  border-top: 1px solid rgba(27, 42, 74, 0.18);
+  border-top: 1px solid var(--color-divider-strong);
   scroll-margin-top: 1rem;
 }
 
@@ -205,96 +205,57 @@ a:hover {
   margin-top: var(--part-gap);
 }
 
-.guide-part .bento-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--bento-gap);
-  align-items: start;
+/* Subsection: document-style block, no floating tiles */
+.guide-section {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+  border-bottom: 1px solid var(--color-divider);
+  max-width: 100%;
 }
 
-@media (min-width: 860px) {
-  .guide-part .bento-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.guide-flow > .guide-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
-/* First card in each part = chapter title (full width, distinct band) */
-.guide-part .bento-grid > .bento-card:first-child {
-  grid-column: 1 / -1;
-  padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2.25rem);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(
-    145deg,
-    rgba(27, 42, 74, 0.07) 0%,
-    rgba(252, 250, 247, 0.97) 48%,
-    rgba(201, 169, 110, 0.08) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow:
-    0 1px 2px rgba(27, 42, 74, 0.06),
-    0 12px 40px rgba(27, 42, 74, 0.07),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  border-left: 4px solid var(--color-gold);
+.guide-flow > .guide-section:first-child {
+  padding-top: 0;
 }
 
-.guide-part .bento-grid > .bento-card:first-child .bento-card__label {
-  color: var(--color-navy);
-  opacity: 0.85;
+/* Part title block: typographic emphasis only */
+.guide-part .guide-flow > .guide-section:first-child {
+  border-bottom: 2px solid var(--color-divider-strong);
+  padding-bottom: 1.25rem;
+  margin-bottom: 0.25rem;
 }
 
-.guide-part .bento-grid > .bento-card:first-child h2 {
-  font-size: clamp(1.5rem, 2.8vw, 2rem);
-  margin-bottom: 0.4em;
+.guide-part .guide-flow > .guide-section:first-child h2 {
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
+  padding-left: 0.65rem;
+  border-left: 4px solid var(--color-heading);
+  margin-left: -0.65rem;
 }
 
-/* Explicit full-width rows (tables, long reads) */
-.guide-part .bento-card--full {
-  grid-column: 1 / -1;
-}
-
-/* Glass card — consistent shape */
-.bento-grid {
-  display: grid;
-  gap: var(--bento-gap);
-}
-
-.bento-card {
-  padding: var(--pad-card);
-  border-radius: var(--radius-md);
-  border: var(--glass-border);
-  background: var(--glass-bg);
-  background-color: var(--glass-bg-solid);
-  box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.bento-card__body {
-  flex: 1;
-  min-width: 0;
-}
-
-.bento-card__body > *:last-child {
-  margin-bottom: 0;
-}
-
-@media (prefers-reduced-transparency: reduce) {
-  .bento-card {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
-}
-
-.bento-card__label {
+.guide-section__label {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: 0.5rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.guide-section__body {
+  min-width: 0;
+}
+
+.guide-section__body > *:last-child {
+  margin-bottom: 0;
+}
+
+.guide-section > h2,
+.guide-section > h3 {
+  margin-bottom: 0.65rem;
 }
 
 /* Tables */
@@ -323,20 +284,20 @@ a:hover {
 .data-table th {
   font-family: var(--font-sans);
   font-weight: 600;
-  color: var(--color-navy);
-  background: rgba(27, 42, 74, 0.04);
+  color: var(--color-heading);
+  background: color-mix(in srgb, var(--color-heading) 7%, var(--color-bg));
 }
 
 .data-table tbody tr:hover {
-  background: rgba(201, 169, 110, 0.06);
+  background: color-mix(in srgb, var(--color-heading) 5%, var(--color-bg));
 }
 
 /* Blockquote */
 .blockquote-card {
   margin: 1rem 0 0;
   padding: 1rem 1.25rem;
-  border-left: 4px solid var(--color-gold);
-  background: rgba(27, 42, 74, 0.04);
+  border-left: 4px solid var(--color-heading);
+  background: color-mix(in srgb, var(--color-heading) 5%, var(--color-bg));
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   max-width: 65ch;
 }
@@ -367,18 +328,18 @@ a:hover {
 }
 
 .toc-nav a:hover {
-  background: rgba(27, 42, 74, 0.06);
-  color: var(--color-navy);
+  background: color-mix(in srgb, var(--color-heading) 8%, var(--color-bg-sidebar));
+  color: var(--color-heading);
 }
 
 .toc-nav a:focus-visible {
-  outline: 2px solid var(--color-navy);
+  outline: 2px solid var(--color-link);
   outline-offset: 2px;
 }
 
 .toc-nav a.is-active {
-  background: rgba(27, 42, 74, 0.1);
-  color: var(--color-navy);
+  background: color-mix(in srgb, var(--color-heading) 12%, var(--color-bg-sidebar));
+  color: var(--color-heading);
   font-weight: 600;
 }
 
@@ -387,7 +348,7 @@ a:hover {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--color-navy);
+  color: var(--color-heading);
   margin-top: 1rem;
   margin-bottom: 0.35rem;
 }
@@ -397,8 +358,8 @@ a:hover {
 }
 
 .toc-nav a.toc-part.is-active {
-  background: rgba(27, 42, 74, 0.1);
-  color: var(--color-navy);
+  background: color-mix(in srgb, var(--color-heading) 12%, var(--color-bg-sidebar));
+  color: var(--color-heading);
 }
 
 .toc-nav .toc-sublink {
@@ -417,16 +378,15 @@ a:hover {
   font-family: var(--font-sans);
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--color-navy);
-  background: var(--glass-bg-solid);
-  border: var(--glass-border);
-  border-radius: var(--radius-md);
+  color: var(--color-heading);
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  box-shadow: var(--glass-shadow);
 }
 
 .mobile-toc-toggle:focus-visible {
-  outline: 2px solid var(--color-navy);
+  outline: 2px solid var(--color-link);
   outline-offset: 2px;
 }
 
@@ -440,10 +400,9 @@ a:hover {
   display: none;
   margin-bottom: 1rem;
   padding: 1rem;
-  border-radius: var(--radius-md);
-  border: var(--glass-border);
-  background: var(--glass-bg-solid);
-  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-divider);
+  background: var(--color-bg-panel);
 }
 
 .mobile-toc-panel.is-open {
@@ -464,7 +423,8 @@ a:hover {
 .site-header {
   grid-area: header;
   padding: 1.25rem 1rem;
-  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-divider);
 }
 
 @media (min-width: 960px) {
@@ -483,26 +443,13 @@ a:hover {
   max-width: min(72ch, 100%);
 }
 
-/* Card title rhythm */
-.bento-card > h2,
-.bento-card > h3 {
-  flex-shrink: 0;
-  margin-bottom: 0.65rem;
-}
-
-.bento-card > h2 + .bento-card__body > p:first-child,
-.bento-card > h3 + .bento-card__body > p:first-child {
-  margin-top: 0;
-}
-
-/* Full-width tables use available column width */
-.bento-card__body .table-scroll {
+.guide-section__body .table-scroll {
   margin-left: 0;
   margin-right: 0;
   max-width: 100%;
 }
 
-.bento-card__body .blockquote-card {
+.guide-section__body .blockquote-card {
   max-width: min(65ch, 100%);
 }
 

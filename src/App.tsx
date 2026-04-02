@@ -27,7 +27,7 @@ export function App() {
         <main className="main-column" id="main-content" tabIndex={-1}>
           <div className="guide-stack">
             <div className="guide-intro-wrap">
-              <div className="bento-grid bento-grid--intro">
+              <div className="guide-flow guide-flow--intro">
                 <GuideIntro />
               </div>
             </div>

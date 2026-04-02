@@ -6,8 +6,8 @@ export function TypePairingSample() {
       style={{
         padding: "1rem 1.25rem",
         borderRadius: "var(--radius-sm)",
-        background: "rgba(27,42,74,0.05)",
-        border: "1px solid rgba(27,42,74,0.12)",
+        background: "color-mix(in srgb, #0f172a 6%, #faf9f5)",
+        border: "1px solid #c9c4ba",
       }}
     >
       <p

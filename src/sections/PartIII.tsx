@@ -8,7 +8,7 @@ import { CompetitiveMatrix } from "../illustrations/CompetitiveMatrix";
 
 export function PartIII() {
   return (
-    <div className="bento-grid">
+    <div className="guide-flow">
       <BentoCard
         id="part-iii-implications-of-branding-decisions"
         title="Part III: Implications of Branding Decisions"
@@ -199,7 +199,6 @@ export function PartIII() {
         id="photography-imagery-direction"
         title="Photography & Imagery Direction"
         titleLevel="h3"
-        layout="full"
       >
         <p>
           Imagery is the most underestimated element of agency branding. Mismatched photography
@@ -385,7 +384,6 @@ export function PartIII() {
         id="accessibility-contrast"
         title="Accessibility & Contrast"
         titleLevel="h3"
-        layout="full"
       >
         <div className="illustration-wrap">
           <ContrastAaDiagram style={{ width: "100%", maxWidth: "360px" }} />
