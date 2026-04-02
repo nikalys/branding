@@ -1,0 +1,38 @@
+:root {
+  /* Guide palette + UI */
+  --color-navy: #1b2a4a;
+  --color-warm-white: #f5f2ee;
+  --color-gold: #c9a96e;
+  --color-text: #2d2d2d;
+  --color-text-muted: #5c5c5c;
+  --color-border-muted: #8a8a8a;
+  --color-divider: #e8e8e8;
+
+  --radius-sm: 16px;
+  --radius-md: 20px;
+  --radius-lg: 24px;
+
+  --pad-card: clamp(1rem, 3vw, 1.75rem);
+
+  --glass-blur: 14px;
+  --glass-border: 1px solid rgba(255, 255, 255, 0.18);
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-solid: rgba(252, 250, 247, 0.92);
+  --glass-shadow:
+    0 1px 2px rgba(27, 42, 74, 0.06),
+    0 8px 24px rgba(27, 42, 74, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "DM Serif Display", Georgia, serif;
+
+  --toc-width: 17rem;
+  --max-content: 72rem;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --glass-blur: 0px;
+    --glass-bg: var(--glass-bg-solid);
+  }
+}
