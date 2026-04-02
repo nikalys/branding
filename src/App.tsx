@@ -25,14 +25,39 @@ export function App() {
           <TableOfContents activeId={activeId} />
         </aside>
         <main className="main-column" id="main-content" tabIndex={-1}>
-          <div className="bento-grid">
-            <GuideIntro />
-            <PartI />
-            <PartII />
-            <PartIII />
-            <PartIV />
-            <PartV />
-            <PartVI />
+          <div className="guide-stack">
+            <div className="guide-intro-wrap">
+              <div className="bento-grid bento-grid--intro">
+                <GuideIntro />
+              </div>
+            </div>
+
+            <section className="guide-part" aria-label="Part I: Core Brand Principles">
+              <PartI />
+            </section>
+
+            <section className="guide-part" aria-label="Part II: Choosing a Brand Theme">
+              <PartII />
+            </section>
+
+            <section className="guide-part" aria-label="Part III: Implications of Branding Decisions">
+              <PartIII />
+            </section>
+
+            <section className="guide-part" aria-label="Part IV: Positioning and market mapping">
+              <PartIV />
+            </section>
+
+            <section
+              className="guide-part"
+              aria-label="Part V: Recommendations for a small-scale beginner agency"
+            >
+              <PartV />
+            </section>
+
+            <section className="guide-part" aria-label="Part VI: Brand evolution roadmap">
+              <PartVI />
+            </section>
           </div>
         </main>
       </div>

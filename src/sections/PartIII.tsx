@@ -8,20 +8,19 @@ import { CompetitiveMatrix } from "../illustrations/CompetitiveMatrix";
 
 export function PartIII() {
   return (
-    <>
+    <div className="bento-grid">
       <BentoCard
         id="part-iii-implications-of-branding-decisions"
         title="Part III: Implications of Branding Decisions"
         titleLevel="h2"
         label="Section"
-        span={12}
       >
         <p style={{ maxWidth: "none" }}>
           Color, type, imagery, competition, ratios, and accessibility—what each choice signals.
         </p>
       </BentoCard>
 
-      <BentoCard id="color" title="Color" titleLevel="h3" span={6}>
+      <BentoCard id="color" title="Color" titleLevel="h3">
         <p>Color is the fastest-decoded visual signal. It operates before conscious thought.</p>
         <div className="illustration-wrap">
           <ColorSignalBars style={{ width: "100%", maxWidth: "320px" }} />
@@ -107,7 +106,7 @@ export function PartIII() {
         </p>
       </BentoCard>
 
-      <BentoCard id="typography" title="Typography" titleLevel="h3" span={6}>
+      <BentoCard id="typography" title="Typography" titleLevel="h3">
         <p>Type communicates personality before a word is read.</p>
         <TypePairingSample />
         <p className="figure-caption">Figure: Serif display over sans body—hierarchy in practice.</p>
@@ -142,7 +141,7 @@ export function PartIII() {
         </ul>
       </BentoCard>
 
-      <BentoCard id="logo-type" title="Logo Type" titleLevel="h3" span={6}>
+      <BentoCard id="logo-type" title="Logo Type" titleLevel="h3">
         <DataTable
           caption="Logo format signals and use cases"
           columns={[
@@ -175,7 +174,7 @@ export function PartIII() {
         />
       </BentoCard>
 
-      <BentoCard id="naming" title="Naming" titleLevel="h3" span={6}>
+      <BentoCard id="naming" title="Naming" titleLevel="h3">
         <ul style={{ marginBottom: 0 }}>
           <li>
             <strong>Descriptive names</strong> (&quot;Swift Web Studio&quot;): Clear but generic, harder to
@@ -196,7 +195,12 @@ export function PartIII() {
         </ul>
       </BentoCard>
 
-      <BentoCard id="photography-imagery-direction" title="Photography & Imagery Direction" titleLevel="h3" span={12}>
+      <BentoCard
+        id="photography-imagery-direction"
+        title="Photography & Imagery Direction"
+        titleLevel="h3"
+        layout="full"
+      >
         <p>
           Imagery is the most underestimated element of agency branding. Mismatched photography
           instantly cheapens an otherwise strong identity. This is especially critical for a web agency
@@ -269,7 +273,11 @@ export function PartIII() {
         </p>
       </BentoCard>
 
-      <BentoCard id="competitive-analysis-framework" title="Competitive Analysis Framework" titleLevel="h3" span={6}>
+      <BentoCard
+        id="competitive-analysis-framework"
+        title="Competitive Analysis Framework"
+        titleLevel="h3"
+      >
         <div className="illustration-wrap">
           <CompetitiveMatrix style={{ width: "100%", maxWidth: "240px" }} />
           <p className="figure-caption">
@@ -325,7 +333,6 @@ export function PartIII() {
         id="color-usage-ratios-60-30-10-rule"
         title="Color Usage Ratios — The 60-30-10 Rule"
         titleLevel="h3"
-        span={6}
       >
         <p>
           Having a palette is not enough. You need a system for <em>how much</em> of each color appears.
@@ -374,7 +381,12 @@ export function PartIII() {
         </p>
       </BentoCard>
 
-      <BentoCard id="accessibility-contrast" title="Accessibility & Contrast" titleLevel="h3" span={12}>
+      <BentoCard
+        id="accessibility-contrast"
+        title="Accessibility & Contrast"
+        titleLevel="h3"
+        layout="full"
+      >
         <div className="illustration-wrap">
           <ContrastAaDiagram style={{ width: "100%", maxWidth: "360px" }} />
         </div>
@@ -412,6 +424,6 @@ export function PartIII() {
           accessibility, clients will rightly question whether you will apply it to their sites.
         </p>
       </BentoCard>
-    </>
+    </div>
   );
 }

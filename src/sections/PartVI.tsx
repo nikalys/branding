@@ -3,13 +3,12 @@ import { RoadmapPhases } from "../illustrations/RoadmapPhases";
 
 export function PartVI() {
   return (
-    <>
+    <div className="bento-grid">
       <BentoCard
         id="part-vi-brand-evolution-roadmap"
         title="Part VI: Brand Evolution Roadmap"
         titleLevel="h2"
         label="Section"
-        span={12}
       >
         <p style={{ maxWidth: "none" }}>
           Your brand is not static. It should evolve as your agency grows. But evolution must be
@@ -24,7 +23,6 @@ export function PartVI() {
         id="phase-1-foundation"
         title="Phase 1: Foundation (Months 1–6, $500–$1,500/project)"
         titleLevel="h3"
-        span={6}
       >
         <p>
           <strong>Focus:</strong> Establish credibility. Look like a real business.
@@ -47,7 +45,6 @@ export function PartVI() {
         id="phase-2-refinement"
         title="Phase 2: Refinement (Months 6–18, $1,500–$3,000/project)"
         titleLevel="h3"
-        span={6}
       >
         <p>
           <strong>Focus:</strong> Sharpen positioning. Begin to specialize or differentiate.
@@ -72,7 +69,7 @@ export function PartVI() {
         id="phase-3-elevation"
         title="Phase 3: Elevation (Months 18–36, $3,000–$8,000+/project)"
         titleLevel="h3"
-        span={12}
+        layout="full"
       >
         <p>
           <strong>Focus:</strong> Move upmarket. Brand signals premium without losing approachability.
@@ -103,9 +100,9 @@ export function PartVI() {
         id="summary-positioning-in-one-sentence"
         title="Summary: Positioning in One Sentence"
         titleLevel="h3"
-        span={12}
+        layout="full"
       >
-        <blockquote className="blockquote-card" style={{ maxWidth: "52ch" }}>
+        <blockquote className="blockquote-card" style={{ maxWidth: "min(52ch, 100%)" }}>
           <p style={{ marginBottom: 0 }}>
             A dependable, modern web studio that makes small businesses look credible — at a price that
             makes sense for where they are now.
@@ -120,6 +117,6 @@ export function PartVI() {
           <p style={{ margin: "0.25rem 0 0" }}>Reviewed and expanded: 2026-04-02</p>
         </footer>
       </BentoCard>
-    </>
+    </div>
   );
 }

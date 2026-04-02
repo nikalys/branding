@@ -1,13 +1,12 @@
 import type { ReactNode } from "react";
 
-export type BentoSpan = 4 | 6 | 8 | 12;
-
 export interface BentoCardProps {
   id?: string;
   title: string;
   titleLevel?: "h2" | "h3";
   label?: string;
-  span?: BentoSpan;
+  /** Span all columns (tables, long sections). Part openers can omit—CSS makes first card full width. */
+  layout?: "default" | "full";
   children: ReactNode;
   className?: string;
 }
@@ -17,18 +16,11 @@ export function BentoCard({
   title,
   titleLevel = "h2",
   label,
-  span = 12,
+  layout = "default",
   children,
   className = "",
 }: BentoCardProps) {
-  const spanClass =
-    span === 12
-      ? ""
-      : span === 8
-        ? " bento-card--span-8"
-        : span === 6
-          ? " bento-card--span-6"
-          : " bento-card--span-4";
+  const layoutClass = layout === "full" ? " bento-card--full" : "";
 
   const Heading = titleLevel;
   const headingId = id ? `${id}-heading` : undefined;
@@ -36,12 +28,12 @@ export function BentoCard({
   return (
     <article
       id={id}
-      className={`bento-card${spanClass} ${className}`.trim()}
+      className={`bento-card${layoutClass} ${className}`.trim()}
       aria-labelledby={headingId}
     >
       {label ? <p className="bento-card__label">{label}</p> : null}
       <Heading id={headingId}>{title}</Heading>
-      {children}
+      <div className="bento-card__body">{children}</div>
     </article>
   );
 }

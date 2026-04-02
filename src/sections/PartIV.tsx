@@ -4,20 +4,24 @@ import { MarketTierLadder } from "../illustrations/MarketTierLadder";
 
 export function PartIV() {
   return (
-    <>
+    <div className="bento-grid">
       <BentoCard
         id="part-iv-positioning-market-mapping"
         title="Part IV: Positioning → Market Mapping"
         titleLevel="h2"
         label="Section"
-        span={12}
       >
         <p style={{ maxWidth: "none" }}>
           How brand positioning maps to markets, typical clients, and price bands.
         </p>
       </BentoCard>
 
-      <BentoCard id="market-mapping-overview" title="Positioning and markets" titleLevel="h3" span={12}>
+      <BentoCard
+        id="market-mapping-overview"
+        title="Positioning and markets"
+        titleLevel="h3"
+        layout="full"
+      >
         <div className="illustration-wrap">
           <MarketTierLadder style={{ width: "100%", maxWidth: "280px" }} />
           <p className="figure-caption">
@@ -77,7 +81,7 @@ export function PartIV() {
         id="how-positioning-changes-the-sales-cycle"
         title="How Positioning Changes the Sales Cycle"
         titleLevel="h3"
-        span={12}
+        layout="full"
       >
         <ul>
           <li>
@@ -96,6 +100,6 @@ export function PartIV() {
           as the portfolio deepens.
         </p>
       </BentoCard>
-    </>
+    </div>
   );
 }

@@ -22,13 +22,12 @@ const archetypeTitles: Record<(typeof archetypeKeys)[number], string> = {
 
 export function PartI() {
   return (
-    <>
+    <div className="bento-grid">
       <BentoCard
         id="part-i-core-brand-principles"
         title="Part I: Core Brand Principles"
         titleLevel="h2"
         label="Section"
-        span={12}
       >
         <p style={{ maxWidth: "none" }}>
           Foundational ideas that shape how a web design agency presents itself and earns trust.
@@ -39,7 +38,6 @@ export function PartI() {
         id="the-brand-is-a-promise"
         title="1. The Brand is a Promise"
         titleLevel="h3"
-        span={6}
       >
         <div className="illustration-wrap">
           <PromiseIllustration style={{ width: "100%", maxWidth: "280px" }} />
@@ -62,7 +60,6 @@ export function PartI() {
         id="positioning-before-aesthetics"
         title="2. Positioning Before Aesthetics"
         titleLevel="h3"
-        span={6}
       >
         <div className="illustration-wrap">
           <PositioningAxesIllustration style={{ width: "100%", maxWidth: "320px" }} />
@@ -99,7 +96,6 @@ export function PartI() {
         id="visual-identity-is-a-signal-system"
         title="3. Visual Identity is a Signal System"
         titleLevel="h3"
-        span={6}
       >
         <p>
           Colors, type, layout, and logo are not decoration — they are compressed communication. A
@@ -116,7 +112,7 @@ export function PartI() {
         </p>
       </BentoCard>
 
-      <BentoCard id="brand-archetypes" title="4. Brand Archetypes" titleLevel="h3" span={6}>
+      <BentoCard id="brand-archetypes" title="4. Brand Archetypes" titleLevel="h3" layout="full">
         <p>
           Archetypes are psychological patterns that give a brand an instantly recognizable personality.
           They originate from Jungian psychology and are one of the most powerful frameworks in brand
@@ -262,7 +258,7 @@ export function PartI() {
         id="the-brand-is-the-client-experience"
         title="5. The Brand is the Client Experience"
         titleLevel="h3"
-        span={12}
+        layout="full"
       >
         <p>
           For a services business, the brand is not just what the client sees — it is what the client{" "}
@@ -328,6 +324,6 @@ export function PartI() {
           communication every time.
         </p>
       </BentoCard>
-    </>
+    </div>
   );
 }

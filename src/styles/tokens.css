@@ -26,8 +26,11 @@
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "DM Serif Display", Georgia, serif;
 
-  --toc-width: 17rem;
-  --max-content: 72rem;
+  --toc-width: 19rem;
+  --max-content: none;
+  --content-pad-x: clamp(1.25rem, 4vw, 3rem);
+  --part-gap: clamp(2.5rem, 5vw, 4rem);
+  --bento-gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 @media (prefers-reduced-transparency: reduce) {

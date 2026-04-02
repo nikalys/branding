@@ -2,7 +2,7 @@ import { BentoCard } from "../components/BentoCard";
 
 export function GuideIntro() {
   return (
-    <BentoCard id="guide-intro" title="How to use this guide" titleLevel="h2" label="Start here" span={12}>
+    <BentoCard id="guide-intro" title="How to use this guide" titleLevel="h2" label="Start here">
       <p>
         This document is organized in six parts: core principles, theme selection, implications of
         branding decisions, market mapping, practical recommendations for small-scale agencies, and a

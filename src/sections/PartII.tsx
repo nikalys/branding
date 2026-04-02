@@ -3,13 +3,12 @@ import { SixThemesIllustration } from "../illustrations/SixThemesIllustration";
 
 export function PartII() {
   return (
-    <>
+    <div className="bento-grid">
       <BentoCard
         id="part-ii-choosing-a-brand-theme"
         title="Part II: Choosing a Brand Theme"
         titleLevel="h2"
         label="Section"
-        span={12}
       >
         <p style={{ maxWidth: "none" }}>
           How to choose the emotional and aesthetic territory your agency owns.
@@ -20,7 +19,6 @@ export function PartII() {
         id="the-theme-selection-framework"
         title="The Theme Selection Framework"
         titleLevel="h3"
-        span={6}
       >
         <p>
           A brand theme is the emotional and aesthetic territory your agency owns. It should emerge
@@ -44,10 +42,10 @@ export function PartII() {
         id="the-six-primary-agency-themes"
         title="The Six Primary Agency Themes"
         titleLevel="h3"
-        span={6}
+        layout="full"
       >
         <div className="illustration-wrap">
-          <SixThemesIllustration style={{ width: "100%", maxWidth: "420px" }} />
+          <SixThemesIllustration style={{ width: "100%", maxWidth: "min(420px, 100%)" }} />
           <p className="figure-caption">
             Figure: Six visual metaphors—clean, bold, technical, warm, premium editorial, niche focus.
           </p>
@@ -91,6 +89,6 @@ export function PartII() {
           expertise. Attracts clients in that niche. Risk: limits future expansion.
         </p>
       </BentoCard>
-    </>
+    </div>
   );
 }

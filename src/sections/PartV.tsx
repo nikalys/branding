@@ -7,13 +7,12 @@ import { DosDontsIcons } from "../illustrations/DosDontsIcons";
 
 export function PartV() {
   return (
-    <>
+    <div className="bento-grid">
       <BentoCard
         id="part-v-recommendations-small-scale-beginner-agency"
         title="Part V: Recommendations for a Small-Scale Beginner Agency ($500–$3,000/project, 1–5 projects/week)"
         titleLevel="h2"
         label="Section"
-        span={12}
       >
         <p style={{ maxWidth: "none" }}>
           Practical palette, type, logo, voice, social application, priorities, and do&apos;s and
@@ -21,7 +20,7 @@ export function PartV() {
         </p>
       </BentoCard>
 
-      <BentoCard id="strategic-positioning" title="Strategic Positioning" titleLevel="h3" span={12}>
+      <BentoCard id="strategic-positioning" title="Strategic Positioning" titleLevel="h3" layout="full">
         <p>
           You are an <strong>accessible, professional generalist</strong> with a bias toward small
           businesses that need a real online presence without enterprise budgets. Your clients are
@@ -34,7 +33,7 @@ export function PartV() {
         </p>
       </BentoCard>
 
-      <BentoCard id="color-palette-recommendation" title="Color Palette Recommendation" titleLevel="h3" span={6}>
+      <BentoCard id="color-palette-recommendation" title="Color Palette Recommendation" titleLevel="h3">
         <div className="illustration-wrap">
           <PaletteSwatches style={{ width: "100%", maxWidth: "360px" }} />
         </div>
@@ -88,7 +87,7 @@ export function PartV() {
         </ul>
       </BentoCard>
 
-      <BentoCard id="typography-recommendation" title="Typography Recommendation" titleLevel="h3" span={6}>
+      <BentoCard id="typography-recommendation" title="Typography Recommendation" titleLevel="h3">
         <TypePairingSample />
         <p>
           <strong>Primary typeface: Inter or DM Sans (sans-serif)</strong>
@@ -116,7 +115,7 @@ export function PartV() {
         </p>
       </BentoCard>
 
-      <BentoCard id="logo-recommendation" title="Logo Recommendation" titleLevel="h3" span={12}>
+      <BentoCard id="logo-recommendation" title="Logo Recommendation" titleLevel="h3" layout="full">
         <div className="illustration-wrap">
           <LogoLockupHint style={{ width: "100%", maxWidth: "200px" }} />
           <p className="figure-caption">
@@ -162,7 +161,7 @@ export function PartV() {
         id="brand-personality-model-emotional-territory"
         title="Brand Personality Model & Emotional Territory"
         titleLevel="h3"
-        span={12}
+        layout="full"
       >
         <p>
           Brand voice comes from brand personality. Before writing a single word of copy, define where
@@ -247,7 +246,7 @@ export function PartV() {
         </p>
       </BentoCard>
 
-      <BentoCard id="brand-voice" title="Brand Voice" titleLevel="h3" span={12}>
+      <BentoCard id="brand-voice" title="Brand Voice" titleLevel="h3" layout="full">
         <p>Your copy should be:</p>
         <ul>
           <li>
@@ -302,7 +301,12 @@ export function PartV() {
         </p>
       </BentoCard>
 
-      <BentoCard id="social-media-brand-application" title="Social Media Brand Application" titleLevel="h3" span={12}>
+      <BentoCard
+        id="social-media-brand-application"
+        title="Social Media Brand Application"
+        titleLevel="h3"
+        layout="full"
+      >
         <p>
           Social media is where most first impressions happen now — often before a prospect visits your
           website. Your social presence must be as intentional as your site.
@@ -361,7 +365,7 @@ export function PartV() {
         </ol>
       </BentoCard>
 
-      <BentoCard id="brand-application-priorities" title="Brand Application Priorities" titleLevel="h3" span={6}>
+      <BentoCard id="brand-application-priorities" title="Brand Application Priorities" titleLevel="h3">
         <p>
           At 1–5 projects per week, you need a brand system that you can apply consistently without
           significant overhead. Build these in order:
@@ -399,7 +403,11 @@ export function PartV() {
         </ol>
       </BentoCard>
 
-      <BentoCard id="comprehensive-dos-and-donts" title="Comprehensive Do's and Don'ts" titleLevel="h3" span={6}>
+      <BentoCard
+        id="comprehensive-dos-and-donts"
+        title="Comprehensive Do's and Don'ts"
+        titleLevel="h3"
+      >
         <div className="illustration-wrap">
           <DosDontsIcons style={{ width: "100%", maxWidth: "200px" }} />
           <p className="figure-caption">Figure: Reinforce system discipline—clarity over decoration.</p>
@@ -439,6 +447,6 @@ export function PartV() {
           <li>Never send unbranded documents (plain Word docs, unstyled emails)</li>
         </ul>
       </BentoCard>
-    </>
+    </div>
   );
 }
